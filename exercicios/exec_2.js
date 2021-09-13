@@ -48,24 +48,15 @@ function seeSidesTriangle(a, b, c) {
 
 function validationsTriangulo(a, b, c) {
 
-    function verify(x, y) {
-        const arr = [x, y];
-        const min = Math.min(...arr);
-        const max = Math.max(...arr);
+    const re1 = (a + b) > c;
+    const re2 = (b + c) > a;
+    const re3 = (c + a) > b;
 
-        return { min, max }
-    }
-
-
-    const return1 = (verify(b - c).max - verify(b, c).min) < a < b + c;
-    const return2 = (verify(a - c).max - verify(a, c).min) < b < a + c;
-    const return3 = (verify(a - b).max - verify(a, b).min) < c < a + b;
-
-    if (return1 && return2 && return3) {
+    if (re1 && re2 && re3) {
         return true;
     } else {
         console.log(`Medidas invalidas`);
     }
 }
 
-validationTypeTriangulo(1, 0, 0) //chamada da funcao
+validationTypeTriangulo(10, 12, 10) //chamada da funcao
